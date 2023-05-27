@@ -41,12 +41,12 @@ function Home() {
               <InputLabel sx={{maxWidth:'240px'}}>
                 <Box  marginLeft={'14px'} fontSize={'14px'}>Departure</Box>
                 <TextField  sx={{fontSize:'20px','& input':{'fontSize':'22px',fontWeight:'600',padding:'0px 10px'}}} type="date"/>
-                <Box maxWidth={'150px'} marginLeft={'14px'} fontSize={'14px'} width='100%' style={{overflow:'hidden'}}>DEL, Indira Gandhi Internation Airport</Box>
+                <Box maxWidth={'150px'} marginLeft={'14px'} fontSize={'14px'} width='100%' style={{overflow:'hidden'}}>Monday</Box>
               </InputLabel>
               <InputLabel sx={{maxWidth:'240px'}}>
                 <Box  marginLeft={'14px'} fontSize={'14px'}>Return</Box>
                 <TextField  sx={{'& input':{'fontSize':'22px',fontWeight:'600',padding:'0px 10px'}}} type="date"/>
-                <Box maxWidth={'220px'} marginLeft={'14px'} fontSize={'14px'} width='100%' style={{overflow:'hidden'}}>DEL, Indira Gandhi Internation Airport</Box>
+                <Box maxWidth={'220px'} marginLeft={'14px'} fontSize={'14px'} width='100%' style={{overflow:'hidden'}}>Sunday</Box>
               </InputLabel>
               <InputLabel sx={{maxWidth:'240px'}}>
                 <Box  marginLeft={'14px'} fontSize={'14px'}>Travellers & Class</Box>
