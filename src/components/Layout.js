@@ -61,7 +61,7 @@ function Layout() {
               setVisible(false);
           }
           else if(window.scrollY===95){
-            window.scrollY+=3;
+            window.scrollY+=70;
           }
           else{
             setVisible(true);

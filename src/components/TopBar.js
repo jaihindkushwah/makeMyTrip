@@ -1,6 +1,6 @@
-import { Box } from '@mui/material'
+import { Box, Button } from '@mui/material'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import loginImg from './assests/loginLogoBlue.jpeg'
 import offer  from './assests/offer.png'
@@ -83,6 +83,7 @@ function SuperOffer({logo,percentage,width='38px'}){
 
 
 function TopBar({activate}) {
+  const navigate=useNavigate();
   return (
     <Box width={'100%'} display={'flex'} fontFamily={'sans-serif'} alignItems={'center'} flexDirection={'column'}>
           <Box minWidth={'80%'} marginBottom={'30px'} height='70px' padding='10px 10px 0px' display={'flex'} justifyContent={'space-between'}>
@@ -106,6 +107,17 @@ function TopBar({activate}) {
               </Box>
               <Box height={'100%'}>
                 <SelectCountry/>
+              </Box>
+              <Box height={'100%'} marginLeft={'10px'}>
+                {
+                  JSON.parse(localStorage.getItem("isLoggedIn")) 
+                  // true
+                  && 
+                  <Button fullWidth sx={{color:'white',fontSize:'10px',textTransform:'capitalize',backgroundImage: 'linear-gradient(93deg,#53b2fe,#065af3),linear-gradient(93deg,#53b2fe,#065af3)'}}
+                  onClick={()=>{localStorage.removeItem('isLoggedIn');
+                    navigate('/')}}
+                  >Logout</Button>
+                }
               </Box>
             </Box>
           </Box>
