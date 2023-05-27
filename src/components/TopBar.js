@@ -125,11 +125,11 @@ function TopBar({activate}) {
           <Box borderRadius={'10px'} top='90px' position={'absolute'} sx={{backgroundColor:'white',
             '&>a':{color:'#4a4a4a',fontSize:'14px',
             textDecoration:'none',display:'flex',flexDirection:'column',alignItems:'center'},boxShadow:'2px 2px 5px #888888'}}
-            minWidth={'60%'} padding={'20px '} display={'flex'} 
+            minWidth={'60%'} padding={'15px 20px 5px'} display={'flex'} 
            justifyContent={'space-between'} alignItems={'flex-end'} >
                <Link to='/flight'>
-                   <img width={'37px'} src={navImg.flight(activate==='flight')} alt='flight'/>
-                   {activate==='flight' ?
+                   <img width={'37px'} src={navImg.flight(activate===''||activate==='flight')} alt='flight'/>
+                   {activate===''||activate==='flight' ?
                <Box sx={{ paddingBottom:'3px', borderBottom:'3px solid #008cff', color:'#008cff'}}>
                   Flights
                 </Box>: 'Flights'}

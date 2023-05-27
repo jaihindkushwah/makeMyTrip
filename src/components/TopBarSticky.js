@@ -14,8 +14,8 @@ function TopBarSticky({activate,IsLoggedInComponent}) {
                 <img width={'110px'}  src='https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/logo@2x.png' alt='makemytriplogo' />
               </Link>
               <Link to='/flight'>
-                  <img width={'34px'} src={navImg.flight(activate==='flight')} alt='flight'/>
-                  {activate==='flight' ?
+                  <img width={'34px'} src={navImg.flight(activate===''||activate==='flight')} alt='flight'/>
+                  {(activate===''||activate==='flight') ?
                <Box sx={{padding:'2px 5px',borderRadius:'15px',backgroundColor:'#008cff',color:'white'}}>
                   Flights
                 </Box>: 'Flights'}

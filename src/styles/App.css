@@ -16,13 +16,21 @@ nav{
     /* background-image: linear-gradient(to bottom, #1264bd, #1972d8); */
     /* background-size: 100% 280px; */
     /* color: #464646; */
+    /* #0368dc  */
+    
+}
+.mainSection{
+    background: white no-repeat;;
+    background-image: linear-gradient( #051322 0%, #15457c 70vh);
+    width:100%;
     
 }
 
 .availability{
     background: white no-repeat;
     background-image: linear-gradient(to bottom, #051322, #15457c);
-    width:100%;
+    width: 100%;
+   
 }
 ul.links>*{
     margin: 10px;
