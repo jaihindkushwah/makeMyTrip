@@ -29,56 +29,73 @@ function Train() {
         setApiData([...res]);
       });
   }, []);
-
-
+  
   useEffect(()=>{
-    filteredData(apiData);
-  },[inputs,selectedDropdown,apiData]);
-
-
-  const filteredData = (data) => {
-    console.log(selectedDropdown);
-    console.log(data);
-    let filterData = [];
-
-    if (Object.entries(inputs).length > 0) {
-      if (selectedDropdown === "bothway") {
-        filterData = [
-          ...data.filter(
-            (data) =>
-              (data["from"].toLowerCase() === inputs["from"] &&
-                data.to.toLowerCase() === inputs["to"] 
-                // &&
-                // data.departure.departureDate === inputs["travel-date"]
-                ) ||
-              (data["from"].toLowerCase() === inputs["to"] &&
-                data.to.toLowerCase() === inputs["from"] 
-                // &&
-                // data.departure.departureDate === inputs["travel-date"]
-                )
-          ),
-        ];
-      } else {
-        filterData = [
-          ...data.filter(
-            (data) =>
-              data["from"].toLowerCase() === inputs["from"] &&
-              data.to.toLowerCase() === inputs["to"] 
-              // &&
-              // data.departure.departureDate === inputs["travel-date"]
-          ),
-        ];
-      }
+    let filterData=[];
+    if(Object.entries(inputs).length!==0){
+      apiData.map((item)=>
+        {
+          if(item["from"].toLowerCase() === inputs["FROM"] && item["to"].toLowerCase() === inputs["TO"] ){
+            filterData=[...filterData,item];
+          } return item;
+        }
+      )
+      setStoredData(filterData)
     }
-
-    if (filterData.length === 0 && Object.entries(inputs).length === 0) {
-      console.log(data);
-      setStoredData([...data]);
-    } else {
-      console.log(filterData);
-      setStoredData([...filterData]);
+    else{
+      setStoredData(apiData)
     }
-  };
+  },[inputs,selectedDropdown,apiData])
+
+
+  // useEffect(()=>{
+  //   filteredData(apiData);
+  // },[inputs,selectedDropdown,apiData]);
+
+
+  // const filteredData = (data) => {
+  //   console.log(selectedDropdown);
+  //   console.log(data);
+  //   let filterData = [];
+
+  //   if (Object.entries(inputs).length > 0) {
+  //     if (selectedDropdown === "bothway") {
+  //       filterData = [
+  //         ...data.filter(
+  //           (data) =>
+  //             (data["from"].toLowerCase() === inputs["from"] &&
+  //               data.to.toLowerCase() === inputs["to"] 
+  //               // &&
+  //               // data.departure.departureDate === inputs["travel-date"]
+  //               ) ||
+  //             (data["from"].toLowerCase() === inputs["to"] &&
+  //               data.to.toLowerCase() === inputs["from"] 
+  //               // &&
+  //               // data.departure.departureDate === inputs["travel-date"]
+  //               )
+  //         ),
+  //       ];
+  //     } else {
+  //       filterData = [
+  //         ...data.filter(
+  //           (data) =>
+  //             data["from"].toLowerCase() === inputs["from"] &&
+  //             data.to.toLowerCase() === inputs["to"] 
+  //             // &&
+  //             // data.departure.departureDate === inputs["travel-date"]
+  //         ),
+  //       ];
+  //     }
+  //   }
+
+  //   if (filterData.length === 0 && Object.entries(inputs).length === 0) {
+  //     console.log(data);
+  //     setStoredData([...data]);
+  //   } else {
+  //     console.log(filterData);
+  //     setStoredData([...filterData]);
+  //   }
+  // };
 
   return (
     <>

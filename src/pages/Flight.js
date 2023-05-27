@@ -32,57 +32,25 @@ function Flight() {
         // setStoredData([...res]);
       });
   },[]);
-  // console.log(storedData);
-
   useEffect(()=>{
-    filteredData(apiData);
-  },[flightInput,selectedDropdown,apiData]);
-
-  //   Filter data according to user input
-  const filteredData = (data) => {
-    // console.log(flightInput);
-    let filterFlightData = [];
-
-    if (Object.entries(flightInput).length > 0) {
-      if (selectedDropdown === "bothway") {
-        // if (!Object.keys(flightInput).includes("return")) {
-        //   alert("Please enter return date and then search.");
-        //   return;
-        // }
-        filterFlightData = [
-          ...data.filter(
-            (data) =>
-              data["from"].toLowerCase() === flightInput["from"] &&
-              data.to.toLowerCase() === flightInput["to"] 
-              // &&
-              // data.departure.departureDate === flightInput["departure"] &&
-              // data.return.returnDate === flightInput["return"]
-          ),
-        ];
-      } else {
-        filterFlightData = [
-          ...data.filter(
-            (data) =>
-              data["from"].toLowerCase() === flightInput["from"] &&
-              data.to.toLowerCase() === flightInput["to"] 
-              // &&
-              // data.departure.departureDate === flightInput["departure"]
-          ),
-        ];
-      }
+    let filterData=[];
+    if(Object.entries(flightInput).length!==0){
+      apiData.map((item)=>
+        {
+          if(item.from.toLowerCase()===flightInput["FROM"] && item.to.toLowerCase()===flightInput["TO"] ){
+            filterData=[...filterData,item];
+          }
+          return item;
+        }
+        
+      )
+      setStoredData(filterData)
     }
-
-    if (
-      filterFlightData.length === 0 &&
-      Object.entries(flightInput).length === 0
-    ) {
-      // console.log(data);
-      setStoredData([...data]);
-    } else {
-      // console.log(filterFlightData);
-      setStoredData([...filterFlightData]);
+    else{
+      setStoredData(apiData)
     }
-  };
+  },[flightInput,selectedDropdown,apiData])
+  
   return (
     <>
       <Search

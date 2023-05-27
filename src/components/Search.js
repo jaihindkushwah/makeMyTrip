@@ -36,7 +36,7 @@ function Search(props) {
               alert('Please fill input filled');
             }
             
-            
+            // e.target.reset();
           }}  
         >
 

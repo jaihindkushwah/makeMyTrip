@@ -31,49 +31,66 @@ function Stay() {
         setApiData([...res]);
       });
   }, []);
-
   useEffect(()=>{
-    filteredData(apiData);
-  },[inputs,selectedDropdown,apiData]);
+    let filterData=[];
+    if(Object.entries(inputs).length!==0){
+      apiData.map((item)=>
+        {
+          if(item["city"].toLowerCase() === inputs["CITY,OR LOCATION"] ){
+            filterData=[...filterData,item];
+          }return item;
+        }
+        
+      )
+      setStoredData(filterData)
+    }
+    else{
+      setStoredData(apiData)
+    }
+  },[inputs,selectedDropdown,apiData])
+
+  // useEffect(()=>{
+  //   filteredData(apiData);
+  // },[inputs,selectedDropdown,apiData]);
 
 
-  const filteredData = (data) => {
-    console.log(inputs);
-    console.log(selectedDropdown);
+  // const filteredData = (data) => {
+  //   console.log(inputs);
+  //   console.log(selectedDropdown);
     
-    let filterData = [];
+  //   let filterData = [];
 
-    if (Object.entries(inputs).length > 0) {
-      // if(Object.keys(inputs).includes('guests')){
-        filterData = [
-          ...data.filter(
-            (data) =>
-              data["city"].toLowerCase() === inputs["city,or location"] 
-              // &&
-              // data["check_in"] === inputs["check-in"] &&
-              // data["check_out"] === inputs["check-out"] &&
-              // data["guests"].includes(inputs["guests"]) &&
-              // data["room_type"].toLowerCase() === selectedDropdown
-          ),
-        ];
+  //   if (Object.entries(inputs).length > 0) {
+  //     // if(Object.keys(inputs).includes('guests')){
+  //       filterData = [
+  //         ...data.filter(
+  //           (data) =>
+  //             data["city"].toLowerCase() === inputs["city,or location"] 
+  //             // &&
+  //             // data["check_in"] === inputs["check-in"] &&
+  //             // data["check_out"] === inputs["check-out"] &&
+  //             // data["guests"].includes(inputs["guests"]) &&
+  //             // data["room_type"].toLowerCase() === selectedDropdown
+  //         ),
+  //       ];
           
-      // }
-      // else{
-      //   // alert('Please enter guests input.');
-      //   setStoredData([...data]);
-      //   return;
-      // }
+  //     // }
+  //     // else{
+  //     //   // alert('Please enter guests input.');
+  //     //   setStoredData([...data]);
+  //     //   return;
+  //     // }
       
-    }
+  //   }
 
-    if (filterData.length === 0 && Object.entries(inputs).length === 0) {
-      console.log(data);
-      setStoredData([...data]);
-    } else {
-      console.log(filterData);
-      setStoredData([...filterData]);
-    }
-  };
+  //   if (filterData.length === 0 && Object.entries(inputs).length === 0) {
+  //     console.log(data);
+  //     setStoredData([...data]);
+  //   } else {
+  //     console.log(filterData);
+  //     setStoredData([...filterData]);
+  //   }
+  // };
 
   return (
     <>
