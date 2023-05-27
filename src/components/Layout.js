@@ -59,9 +59,10 @@ function Layout() {
         {window.onscroll=()=>{
           if(window.scrollY>95){
               setVisible(false);
+              // window.scrollY+=20;
           }
-          else if(window.scrollY===95){
-            window.scrollY+=70;
+          else if(window.scrollY>95){
+            window.scrollY+=50;
           }
           else{
             setVisible(true);

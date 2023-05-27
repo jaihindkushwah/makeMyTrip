@@ -1,6 +1,7 @@
 import { Box, Button } from '@mui/material'
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import '../styles/topbar.css'
 
 import loginImg from './assests/loginLogoBlue.jpeg'
 import offer  from './assests/offer.png'
@@ -54,7 +55,7 @@ function SelectCountry(){
 )
 }
 
-function SuperOffer({logo,percentage,width='38px'}){
+function SuperOffer({logo,spin='',percentage,width='29px',title,description}){
   return (<Link   to={'/'} 
     style={{display:'flex',flexDirection:'row',alignItems:'center',width:'100%'
     ,justifyContent:'space-between',fontSize:'12px',textDecoration:'none',borderRadius:'7px',padding:'0px 10px'
@@ -62,18 +63,18 @@ function SuperOffer({logo,percentage,width='38px'}){
       <Box width={'100%'} display={'flex'} alignItems={'center'}>
         <Box display={'flex'} alignItems={'center'}>
           <Box >
-            <img width={width} src={logo} alt="loginImg" />
-            {percentage && <Box width={"16px"} fontWeight={'800'} marginTop={'-32px'} marginLeft={'9px'} fontSize={'16px'}>%</Box>}
+            <img className={spin} width={width} src={logo} alt="loginImg" />
+            {percentage && <Box zIndex={'10'} width={"15px"} position={'absolute'} fontWeight={'800'} marginTop={'-28px'} marginLeft={'7px'} fontSize={'15px'}>%</Box>}
           </Box>
           {logo===mybizImg && <Box fontWeight={'600'} marginTop={'4px'}>Biz</Box>}
           
         </Box>
         <Box marginLeft={'10px'}>
           <Box fontWeight={'600'}>
-              Super Offers
+              {title}
           </Box>
           <Box fontSize={'10px'} marginTop={'2px'} color={'#9c9c9c'}>
-          Explore great deals & offers
+          {description}
           </Box>
       </Box>
       </Box>
@@ -94,13 +95,13 @@ function TopBar({activate}) {
             </Box>
             <Box display={'flex'} justifyContent={'space-between'} alignItems={'center'}>
               <Box alignSelf={'flex-start'} paddingTop={'5px'} borderRight='1px dashed #ccc'>
-                <SuperOffer logo={offer} percentage={true}/>
+                <SuperOffer spin={'OfferImageSpin'} title={'Super Offers'} description={'Explore great deals & offers'} logo={offer} percentage={true}/>
               </Box>
-              <Box alignSelf={'flex-start'} paddingTop={'5px'} borderRight='1px dashed #ccc'>
-                <SuperOffer width='28px' logo={mybizImg}/>
+              <Box alignSelf={'flex-start'}  paddingTop={'5px'} borderRight='1px dashed #ccc'>
+                <SuperOffer width='28px' title={'Introducing myBiz'} description={'Business Travel Solution'} logo={mybizImg}/>
               </Box>
               <Box alignSelf={'flex-start'} paddingTop={'5px'}>
-                <SuperOffer width='24px' logo={tripImg}/>
+                <SuperOffer title={'My Trips'} description={'Manage your bookings'}  width='24px' logo={tripImg}/>
               </Box>
               <Box height={'100%'}>
                 <IsLoggedInComponent/>

@@ -40,7 +40,7 @@ function Search(props) {
           }}  
         >
 
-         <div className="searchInputs"  style={{padding:'60px 0px',borderBottom:'none'}}>
+         <div className="searchInputs"  style={{padding:'40px 0px 60px',borderBottom:'none'}}>
           <div className="dropDown">
             {/* <InputLabel>{props.dropDown[0]} : */}
               <FormControl>
