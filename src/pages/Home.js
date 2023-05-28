@@ -2,7 +2,8 @@ import { ArrowRightAltOutlined } from "@mui/icons-material";
 import { Box, FormControl, FormControlLabel, FormLabel, InputLabel, Radio, RadioGroup, TextField} from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
+import VerticalImageList from "../components/VerticalImageList";
+import HandpickImgData from '../components/assests/HandpickImgData'
 
 function Home() {
   const navigate=useNavigate();
@@ -88,6 +89,15 @@ function Home() {
           </Box>
       <Box>
       </Box>
+      <Box width='100%' sx={{backgroundColor:'#f2f2f2'}} display={'flex'} alignItems={'center'} flexDirection={'column'}  marginTop={'40px'}  overflow={'hidden'}>
+        <Box width={'80%'} padding={'30px 20px 50px'} sx={{'backgroundColor':'white'}} marginTop={'40px'} marginBottom={'40px'} borderRadius={'13px'} boxShadow={'-2px -2px 4px #ccc'} border={'1px solid #f2f2f2'}>
+          <VerticalImageList title={'Handpicked Collections for You'} data={HandpickImgData}/>
+        </Box>
+        <Box width={'80%'} padding={'30px 20px 50px'} sx={{'backgroundColor':'white'}} marginTop={'40px'} marginBottom={'40px'} borderRadius={'13px'} boxShadow={'-2px -2px 4px #ccc'} border={'1px solid #f2f2f2'}>
+          <VerticalImageList title={'Unlock Lesser-Known Wonders of India'} data={HandpickImgData}/>
+        </Box>
+      </Box>
+      
 
     </Box>
   );

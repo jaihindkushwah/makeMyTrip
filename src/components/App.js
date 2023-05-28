@@ -61,7 +61,7 @@ const App = () => {
     // <div id="main">
     //   <RouterProvider router={router}></RouterProvider>
     //   </div>
-    <div id='main' style={{minHeight:'100vh',display:'flex',alignItems:'center',flexDirection:'column',width:'100%'}} className='mainSection'>
+    <div id='main' style={{minHeight:'100vh',display:'flex',backgroundColor:'#f2f2f2',alignItems:'center',flexDirection:'column',width:'100%'}} className='mainSection'>
     <BrowserRouter>
     <Layout></Layout>
       <Routes>
