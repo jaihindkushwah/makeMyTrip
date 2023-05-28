@@ -361,16 +361,14 @@ h2{
 
 .footer{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 300px;
-    flex-direction: column;
-}
-.footer ul:nth-child(2){
-    display: flex;
     justify-content: space-between;
     align-items: center;
-
+    height: 160px;
+    flex-direction: row;
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 0px 100px;
 }
 .footer ul:nth-child(2) li{
     margin: 10px;

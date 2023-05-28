@@ -8,20 +8,16 @@ function Footer() {
           <ul>
             <li>
               <Link to="/" >
-                <img
-                  src='https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/mmtLogoWhite.png'
-                  width="120px"
-                  color="white"
-                  alt="makemytrip.logo"
-                ></img>
+                <img width={'40px'} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLFzDoUTxXStvqtcsyi3S9e1oSVliP53ZS6w&usqp=CAU' alt=''/>
+              </Link>
+              <Link to='/'>
+                <img width={'40px'} style={{borderRadius:'10px',marginLeft:"10px"}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmO5wMDIR7EXVB9jbRhQA1wie3AlefV-0N6w&usqp=CAU" alt="favebook" />
               </Link>
             </li>
         </ul>
-          <ul>
-            <li><Link to='/'>Home</Link></li>
-            <li><Link to='/'>Careers</Link></li>
-            <li><Link to='/'>About</Link></li>
-            <li><Link to='/'>FAQ</Link></li>
+          <ul style={{display:'flex',flexDirection:'column',alignItems:'flex-end',fontFamily:"sans-serif",justifyContent:'flex-end'}}>
+            <div style={{'fontSize':'16px',fontWeight:'600'}} >© 2023 MAKEMYTRIP PVT. LTD.</div>
+            <div>Country <span style={{'fontSize':'14px',fontWeight:'600'}}>India USA UAE</span></div>
           </ul>
         
     </div>
