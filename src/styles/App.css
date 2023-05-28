@@ -368,7 +368,7 @@ h2{
     width: 100%;
     background-color: black;
     color: white;
-    padding: 0px 100px;
+    padding: 50px 150px ;
 }
 .footer ul:nth-child(2) li{
     margin: 10px;
@@ -421,7 +421,7 @@ h2{
     }
 }
 .bottom{
-    /* padding: 50px; */
+    padding: 20px 100px 30px ;
     width: 100%;
     background-color: white;
     display: grid;
@@ -429,6 +429,7 @@ h2{
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     background-color: #ccc;
     /* height: 100%; */
+    font-size: 14px;
 
 }
 .bottom div{

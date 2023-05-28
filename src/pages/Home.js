@@ -1,4 +1,4 @@
-import { ArrowRightAltOutlined } from "@mui/icons-material";
+import { ArrowRightAltOutlined, KeyboardDoubleArrowDown } from "@mui/icons-material";
 import { Box, FormControl, FormControlLabel, FormLabel, InputLabel, Radio, RadioGroup, TextField} from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +12,7 @@ function Home() {
   }
  
   return (
-    <Box width={'100%'} display={'flex'} justifyItems={'center'} flexDirection={'column'} margin={'40px 0px'} alignItems={'center'} sx={{backgroundColor:'initial'}}>
+    <Box width={'100%'} display={'flex'} fontFamily={'sans-serif'} justifyItems={'center'} flexDirection={'column'} margin={'40px 0px 0px'} alignItems={'center'} sx={{backgroundColor:'initial'}}>
       <Box width={'80%'} minHeight={'340px'}  borderRadius={'10px'} padding={'40px 20px 40px'} sx={{backgroundColor:'white'}} display={'flex'} flexDirection={'column'}>
           <Box display={'flex'} width={'100%'} justifyContent={'space-between'} alignItems={'center'} >
               <FormControl>
@@ -24,7 +24,7 @@ function Home() {
                   </RadioGroup>
                 </FormLabel>
               </FormControl>
-              <Box>
+              <Box fontSize={'14px'}>
                   Book International and Domestic Flights
               </Box>
           </Box>
@@ -89,11 +89,16 @@ function Home() {
           </Box>
       <Box>
       </Box>
+      <Box width='100%' display={'flex'} alignItems={'center'} justifyContent={'center'}>
+        <Box marginTop={'40px'} color={'white'} fontSize={'12px'} display={'flex'} justifyItems={'center'} alignItems={'center'}>
+          <KeyboardDoubleArrowDown/><span style={{padding:'0px 10px',fontWeight:'600'}}> Explore More </span><KeyboardDoubleArrowDown/>
+        </Box>
+      </Box>
       <Box width='100%' sx={{backgroundColor:'#f2f2f2'}} display={'flex'} alignItems={'center'} flexDirection={'column'}  marginTop={'40px'}  overflow={'hidden'}>
-        <Box width={'80%'} padding={'30px 20px 50px'} sx={{'backgroundColor':'white'}} marginTop={'40px'} marginBottom={'40px'} borderRadius={'13px'} boxShadow={'-2px -2px 4px #ccc'} border={'1px solid #f2f2f2'}>
+        <Box width={'80%'} padding={'30px 20px 30px'} sx={{'backgroundColor':'white'}} marginTop={'40px'} marginBottom={'20px'} borderRadius={'13px'} boxShadow={'-2px -2px 4px #ccc'} border={'1px solid #f2f2f2'}>
           <VerticalImageList title={'Handpicked Collections for You'} data={HandpickImgData}/>
         </Box>
-        <Box width={'80%'} padding={'30px 20px 50px'} sx={{'backgroundColor':'white'}} marginTop={'40px'} marginBottom={'40px'} borderRadius={'13px'} boxShadow={'-2px -2px 4px #ccc'} border={'1px solid #f2f2f2'}>
+        <Box width={'80%'} padding={'30px 20px 30px'} sx={{'backgroundColor':'white'}} marginTop={'10px'} marginBottom={'40px'} borderRadius={'13px'} boxShadow={'-2px -2px 4px #ccc'} border={'1px solid #f2f2f2'}>
           <VerticalImageList title={'Unlock Lesser-Known Wonders of India'} data={HandpickImgData}/>
         </Box>
       </Box>
