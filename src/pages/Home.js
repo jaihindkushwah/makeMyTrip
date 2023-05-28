@@ -4,6 +4,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import VerticalImageList from "../components/VerticalImageList";
 import HandpickImgData from '../components/assests/HandpickImgData'
+import UnlockWonderData  from '../components/assests/unlockWonderLocationData'
 
 function Home() {
   const navigate=useNavigate();
@@ -99,7 +100,7 @@ function Home() {
           <VerticalImageList title={'Handpicked Collections for You'} data={HandpickImgData}/>
         </Box>
         <Box width={'80%'} padding={'30px 20px 30px'} sx={{'backgroundColor':'white'}} marginTop={'10px'} marginBottom={'40px'} borderRadius={'13px'} boxShadow={'-2px -2px 4px #ccc'} border={'1px solid #f2f2f2'}>
-          <VerticalImageList title={'Unlock Lesser-Known Wonders of India'} data={HandpickImgData}/>
+          <VerticalImageList title={'Unlock Lesser-Known Wonders of India'} data={UnlockWonderData}/>
         </Box>
       </Box>
       
