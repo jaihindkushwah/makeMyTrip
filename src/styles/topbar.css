@@ -1,6 +1,6 @@
 .OfferImageSpin{
     /* background-color: red; */
-    animation: spin infinite linear 4s;
+    animation: spin infinite linear 3s;
     /* animation-duration: 10s; */
     animation-iteration-count: 3;
     

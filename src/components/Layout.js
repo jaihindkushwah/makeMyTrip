@@ -56,16 +56,14 @@ function Layout() {
   return (<>
        {(!visible || (activate ==='login' || activate === 'register' || activate==='checkout' ) )  && <TopBarSticky activate={activate} IsLoggedInComponent={IsLoggedInComponent} /> }
 
-        {window.onscroll=()=>{
-          if(window.scrollY>95){
+        {window.onscroll=()=>{ console.log(window.scrollY);
+          if(window.scrollY>100){
+            // window.scrollY=120;
               setVisible(false);
-              // window.scrollY+=20;
+              
           }
-          else if(window.scrollY>95){
-            window.scrollY+=50;
-          }
-          else{
-            setVisible(true);
+          else if(window.scrollY < 65){
+              setVisible(true);
           }
         }}
         
@@ -77,3 +75,4 @@ function Layout() {
   );
 }
 export default Layout;
+
